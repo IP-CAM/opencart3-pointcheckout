@@ -1,20 +1,13 @@
 # opencart3-pointcheckout
 OpenCart3 extension for PointCheckout
 
-Tested in opencart Version 3.0.2.0
+# Installation steps :
 
-Intallation ..
+1. download the lastest release .ocmod.zip file from the [releases section](https://github.com/pointcheckout/opencart3-pointcheckout/releases)
 
-after downloading the zip file and extracting it 
+download the 
 
-- do to the extracted folder you would find a folder named upload 
-- compress this folder to zip and then rename it as the following example 
-   ex.( upload.zip => upload.ocmod.zip)
-- the in your admin page go to extensions->installer->upload 
-- choose the renamed compressed file 
--go to extensions->payment nd you see that a payment extension has been addes with nme Pointcheckout
-- click on install and then click on edit to configure your payment extension.
-
-
-
-<a href="http://docs.opencart.com/extension/installer/" target="_blank">For more information Please follow Extension Installer instruction</a> 
+2. In the admin page of your store, go to extensions->installer->upload 
+3. Choose the downloaded .ocmod.zip file
+4. go to extensions->payment and install the extension named Pointcheckout.
+5. Press edit to configure your payment extension, use the API Key/Secret provided by PointCheckout.
