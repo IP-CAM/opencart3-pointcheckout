@@ -1,6 +1,6 @@
 <?php
-class ModelExtensionPaymentPointCheckoutPay extends Model {
-	const PMT = '_pay';
+class ModelExtensionPaymentPointCheckoutCard extends Model {
+	const PMT = '_card';
 	private $prefixPaymentMethodKey = 'payment_pointcheckout' . self::PMT;
 
 	public function getMethod($address, $total) {
@@ -46,12 +46,13 @@ class ModelExtensionPaymentPointCheckoutPay extends Model {
 		if ($status) {
 			$method_data = array(
 				'code'       => 'pointcheckout' . self::PMT . '',
-				'title'      => $this->language->get('text_title'),
+				// as of OpenCart 3.0.3.6, max length for the title in the admin is 128 characters, try no to exceed it
+				'title'      =>  $this->language->get('text_title') . ' <img src="' . HTTPS_SERVER .'catalog/view/theme/default/image/pc_cards.png" height="25"/>',
 				'terms'      => '',
 				'sort_order' => $this->config->get($this->prefixPaymentMethodKey . '_sort_order')
 			);
 		}
 
 		return $method_data;
-	}
+	}	
 }

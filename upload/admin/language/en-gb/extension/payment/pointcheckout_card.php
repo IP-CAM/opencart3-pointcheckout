@@ -1,12 +1,12 @@
 <?php
 // Heading
-$_['heading_title']             = 'PointCheckout';
+$_['heading_title']             = 'PointCheckout Card Payment';
 
 // Text
 $_['text_extension']            = 'Extensions';
 $_['text_success']              = 'Success: You have modified PointCheckout account details!';
-$_['text_edit']                 = 'Edit PointCheckout';
-$_['text_pointcheckout_pay']    = '<a target="_BLANK" href="https://www.pointcheckout.com"><img src="view/image/payment/pointcheckout.png" alt="pointcheckout Website " title="pointcheckout Website Payment " style="border: 1px solid #EEEEEE;" /></a>';
+$_['text_edit']                 = 'Edit PointCheckout Card payment';
+$_['text_pointcheckout_card']    = '<a target="_BLANK" href="https://www.pointcheckout.com"><img src="view/image/payment/pointcheckout.png" alt="pointcheckout Website " title="PointCheckout Payment " style="border: 1px solid #EEEEEE;" /></a>';
 $_['text_all_countries']        = 'All allowed countries';
 $_['text_specific_countries']   = 'Specific Countries Only';
 $_['text_all_usergroups']       = 'All user groups';
@@ -15,7 +15,7 @@ $_['text_sale']                 = 'Sale';
 $_['text_test']                 = 'Test Mode';
 $_['text_live']                 = 'Live Mode';
 $_['text_staging']              = 'Staging Mode';
-$_['text_title']                ='PointCheckout';
+$_['text_title']                ='PointCheckout Card Payment';
 
 // Entry
 $_['entry_pointcheckout_key']   = 'API Key';
@@ -30,7 +30,7 @@ $_['entry_order_status']        = 'Initial Order Status';
 $_['entry_failed_status']       = 'Payment Failed Status';
 $_['entry_success_status']      = 'Payment Success Status';
 $_['entry_geo_zone']            = 'Geo Zone';
-$_['entry_status']              = 'Enable PointCheckout Payment';
+$_['entry_status']              = 'Enable Card Payment';
 $_['entry_sort_order']          = 'Sort Order';
 
 // Help

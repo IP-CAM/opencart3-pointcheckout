@@ -1,0 +1,35 @@
+<form class="form-horizontal">
+  <fieldset id="payment">
+    <legend>{{ text_subtitle }}</legend>
+  </fieldset>
+</form>
+<h4>{{ text_pointcheckout_note }} </h4>
+<div class="buttons">
+  <div class="pull-right">
+    <input type="button" value="{{ button_confirm }}" id="button-confirm" data-loading-text="{{ text_loading }}" class="btn btn-primary" />
+  </div>
+</div>
+<script type="text/javascript">
+$('#button-confirm').bind('click', function() {
+	$.ajax({
+		url: 'index.php?route=extension/payment/pointcheckout_card/send',
+		type: 'post',
+		beforeSend: function() {
+			$('#button-confirm').attr('disabled', true);
+			$('#payment').before('<div class="alert alert-info alert-dismissible"><i class="fa fa-info-circle"></i> {{ text_wait }}</div>'); 
+		},
+		complete: function() {
+			$('.alert-dismissible').remove();
+			$('#button-confirm').attr('disabled', false);
+		},
+		success: function(json) {
+			if (json['error']) {
+				alert(json['error']);
+			}
+			if (json['success']) {
+				location = json['success'];
+			}
+		}
+	});
+});
+</script>

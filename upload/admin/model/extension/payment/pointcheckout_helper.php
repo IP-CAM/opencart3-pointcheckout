@@ -1,6 +1,6 @@
 <?php
 
-class ModelExtensionPaymentPointcheckoutPay extends Model {
+class ModelExtensionPaymentPointCheckoutHelper extends Model {
 
     public function getCountries($data = array()) {
         if ($data) {

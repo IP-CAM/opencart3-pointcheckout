@@ -1,9 +1,9 @@
 <?php
-class ControllerExtensionPaymentPointCheckoutPay extends Controller {
-    const PC_EXT_VERSION = "OpenCart-Reward-2.0.0";
-    const PMT = '_pay';
+class ControllerExtensionPaymentPointCheckoutCard extends Controller {
+    const PC_EXT_VERSION = "OpenCart-Card-2.0.0";
+    const PMT = '_card';
     const API_VER = 'v1.2';
-    const PAYMENT_METHOD = 'POINTCHECKOUT';
+    const PAYMENT_METHOD = 'CARD';
 
     private $prefixPaymentMethodKey = 'payment_pointcheckout' . self::PMT;
 

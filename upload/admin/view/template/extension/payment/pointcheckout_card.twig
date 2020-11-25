@@ -13,7 +13,7 @@
 					class="fa fa-reply"></i></a>
 			</div>
 			<h1>
-				{{ text_pointcheckout_pay }}
+				{{ text_pointcheckout_card }}
 			</h1>
 			<ul class="breadcrumb">
 				{% for breadcrumb in breadcrumbs %}
@@ -44,9 +44,9 @@
 					<div class="form-group">
 						<label class="col-sm-2 control-label" for="input-status">{{ entry_status }}</label>
 						<div class="col-sm-10">
-							<select name="payment_pointcheckout_pay_status" id="input-status"
+							<select name="payment_pointcheckout_card_status" id="input-status"
 								class="form-control">
-								{% if payment_pointcheckout_pay_status %}
+								{% if payment_pointcheckout_card_status %}
 								<option value="1" selected="selected">{{ text_enabled }}</option>
 								<option value="0">{{ text_disabled }}</option>
 								{% else %}
@@ -60,15 +60,15 @@
 						<label class="col-sm-2 control-label" for="input-live-demo"><span
 							data-toggle="tooltip" title="{{ help_test }}">{{ entry_test }}</span></label>
 						<div class="col-sm-10">
-							<select name="payment_pointcheckout_pay_env" id="input-live-demo"
+							<select name="payment_pointcheckout_card_env" id="input-live-demo"
 								class="form-control">
                                  {% if pointcheckout_staging %}
-        								{% if payment_pointcheckout_pay_env == 2 %}
+        								{% if payment_pointcheckout_card_env == 2 %}
         								<option value="1">{{ text_test }}</option>
         								<option value="0">{{ text_live }}</option>
         								<option value="2" selected="selected">{{ text_staging }}</option>
                                      {% else %}
-        								{% if payment_pointcheckout_pay_env %}
+        								{% if payment_pointcheckout_card_env %}
         								<option value="1" selected="selected">{{ text_test }}</option>
         								<option value="0">{{ text_live }}</option>
         								<option value="2" >{{ text_staging }}</option>
@@ -79,7 +79,7 @@
         								{% endif %}
         								{% endif %}
 								{% else %}
-								{% if payment_pointcheckout_pay_env %}
+								{% if payment_pointcheckout_card_env %}
 								<option value="1" selected="selected">{{ text_test }}</option>
 								<option value="0">{{ text_live }}</option>
 								{% else %}
@@ -94,8 +94,8 @@
 						<label class="col-sm-2 control-label"
 							for="input-pointcheckout-key">{{ entry_pointcheckout_key }}</label>
 						<div class="col-sm-10">
-							<input type="text" name="payment_pointcheckout_pay_key"
-								value="{{ payment_pointcheckout_pay_key }}"
+							<input type="text" name="payment_pointcheckout_card_key"
+								value="{{ payment_pointcheckout_card_key }}"
 								placeholder="enter valid API Key " id="input-pointcheckout-key"
 								class="form-control" />
 							{% if error_key %}
@@ -108,8 +108,8 @@
 					<div class="form-group required">
 						<label class="col-sm-2 control-label" for="entry-secret">{{ entry_secret }}</label>
 						<div class="col-sm-10">
-							<input type="text" name="payment_pointcheckout_pay_secret"
-								value="{{ payment_pointcheckout_pay_secret }}"
+							<input type="text" name="payment_pointcheckout_card_secret"
+								value="{{ payment_pointcheckout_card_secret }}"
 								placeholder="{{ entry_secret }}" id="entry-secret"
 								class="form-control" />
 							{% if error_secret %}
@@ -123,14 +123,14 @@
 						<label class="col-sm-2 control-label"
 							for="input-applicable-countries">{{ entry_applicable_countries }}</label>
 						<div class="col-sm-10">
-							<select name="payment_pointcheckout_pay_applicable_countries"
+							<select name="payment_pointcheckout_card_applicable_countries"
 								id="input-applicable-countries" class="form-control">
-								{% if not payment_pointcheckout_pay_applicable_countries %}
+								{% if not payment_pointcheckout_card_applicable_countries %}
 								<option value="0" selected="selected">{{ text_all_countries }}</option>
 								{% else %}
 								<option value="0">{{ text_all_countries }}</option>
 								{% endif %}
-								{% if payment_pointcheckout_pay_applicable_countries %}
+								{% if payment_pointcheckout_card_applicable_countries %}
 								<option value="1" selected="selected">{{ text_specific_countries }}</option>
 								{% else %}
 								<option value="1">{{ text_specific_countries }}</option>
@@ -150,12 +150,12 @@
 							<div id="payment-country" class="well well-sm"
 								style="height: 150px; overflow: auto;"
 								{{ pointcheckout_hide_countries }}>
-								{% for payment_country in payment_pointcheckout_pay_country %}
+								{% for payment_country in payment_pointcheckout_card_country %}
 								{% if payment_country.country_id %}
 								<div id="payment-country{{ payment_country.country_id }}">
 									<i class="fa fa-minus-circle"></i>
 									{{ payment_country.name }}
-									<input type="hidden" name="payment_pointcheckout_pay_country[]"
+									<input type="hidden" name="payment_pointcheckout_card_country[]"
 										value="{{ payment_country.country_id }}" />
 								</div>
 								{%  endif %}
@@ -172,14 +172,14 @@
 						<label class="col-sm-2 control-label"
 							for="input-applicable-usergroups">{{ entry_applicable_user_groups }}</label>
 						<div class="col-sm-10">
-							<select name="payment_pointcheckout_pay_applicable_usergroups"
+							<select name="payment_pointcheckout_card_applicable_usergroups"
 								id="input-applicable-usergroups" class="form-control">
-								{% if not payment_pointcheckout_pay_applicable_usergroups %}
+								{% if not payment_pointcheckout_card_applicable_usergroups %}
 								<option value="0" selected="selected">{{ text_all_usergroups }}</option>
 								{% else %}
 								<option value="0">{{ text_all_usergroups }}</option>
 								{% endif %}
-								{% if payment_pointcheckout_pay_applicable_usergroups %}
+								{% if payment_pointcheckout_card_applicable_usergroups %}
 								<option value="1" selected="selected">{{ text_specific_usergroups }}</option>
 								{% else %}
 								<option value="1">{{ text_specific_usergroups }}</option>
@@ -199,13 +199,13 @@
 							<div id="payment-user-group" class="well well-sm"
 								style="height: 150px; overflow: auto;"
 								{{ pointcheckout_hide_groups }}>
-								{% for payment_user_group in payment_pointcheckout_pay_user_group %}
+								{% for payment_user_group in payment_pointcheckout_card_user_group %}
 								{% if payment_user_group.group_id %}
 								<div id="payment-user-group{{ payment_user_group.group_id }}">
 									<i class="fa fa-minus-circle"></i>
 									{{ payment_user_group.name }}
 									<input type="hidden"
-										name="payment_pointcheckout_pay_user_group[]"
+										name="payment_pointcheckout_card_user_group[]"
 										value="{{ payment_user_group.group_id }}" />
 								</div>
 								{% endif %}
@@ -221,10 +221,10 @@
 					<div class="form-group">
 						<label class="col-sm-2 control-label" for="input-order-status">{{ entry_order_status }}</label>
 						<div class="col-sm-10">
-							<select name="payment_pointcheckout_pay_order_status_id"
+							<select name="payment_pointcheckout_card_order_status_id"
 								id="input-order-status" class="form-control">
 								{% for order_status in order_statuses %}
-								{% if order_status.order_status_id == payment_pointcheckout_pay_order_status_id %}
+								{% if order_status.order_status_id == payment_pointcheckout_card_order_status_id %}
 								<option value="{{ order_status.order_status_id }}"
 									selected="selected">{{ order_status.name }}</option>
 								{% else %}
@@ -237,10 +237,10 @@
 							<div class="form-group">
 						<label class="col-sm-2 control-label" for="input-success-status">{{ entry_success_status }}</label>
 						<div class="col-sm-10">
-							<select name="payment_pointcheckout_pay_payment_success_status_id"
+							<select name="payment_pointcheckout_card_payment_success_status_id"
 								id="input-success-status" class="form-control">
 								{% for order_status in order_statuses %}
-								{% if order_status.order_status_id == payment_pointcheckout_pay_payment_success_status_id %}
+								{% if order_status.order_status_id == payment_pointcheckout_card_payment_success_status_id %}
 								<option value="{{ order_status.order_status_id }}"
 									selected="selected">{{ order_status.name }}</option>
 								{% else %}
@@ -253,10 +253,10 @@
 					<div class="form-group">
 						<label class="col-sm-2 control-label" for="input-failed-status">{{ entry_failed_status }}</label>
 						<div class="col-sm-10">
-							<select name="payment_pointcheckout_pay_payment_failed_status_id"
+							<select name="payment_pointcheckout_card_payment_failed_status_id"
 								id="input-failed-status" class="form-control">
 								{% for order_status in order_statuses %}
-								{% if order_status.order_status_id == payment_pointcheckout_pay_payment_failed_status_id %}
+								{% if order_status.order_status_id == payment_pointcheckout_card_payment_failed_status_id %}
 								<option value="{{ order_status.order_status_id }}"
 									selected="selected">{{ order_status.name }}</option>
 								{% else %}
@@ -270,8 +270,8 @@
 						<label class="col-sm-2 control-label" for="input-total"><span
 							data-toggle="tooltip" title="{{ help_total }}">{{ entry_total }}</span></label>
 						<div class="col-sm-10">
-							<input type="text" name="payment_pointcheckout_pay_total"
-								value="{{ payment_pointcheckout_pay_total }}"
+							<input type="text" name="payment_pointcheckout_card_total"
+								value="{{ payment_pointcheckout_card_total }}"
 								placeholder="{{ entry_total }}" id="input-total"
 								class="form-control" />
 						</div>
@@ -279,8 +279,8 @@
 					<div class="form-group">
 						<label class="col-sm-2 control-label" for="input-sort-order">{{ entry_sort_order }}</label>
 						<div class="col-sm-10">
-							<input type="text" name="payment_pointcheckout_pay_sort_order"
-								value="{{ payment_pointcheckout_pay_sort_order }}"
+							<input type="text" name="payment_pointcheckout_card_sort_order"
+								value="{{ payment_pointcheckout_card_sort_order }}"
 								placeholder="{{ entry_sort_order }}" id="input-sort-order"
 								class="form-control" />
 						</div>
@@ -288,11 +288,11 @@
 					<div class="form-group">
 						<label class="col-sm-2 control-label" for="input-geo-zone">{{ entry_geo_zone }}</label>
 						<div class="col-sm-10">
-							<select name="payment_pointcheckout_pay_geo_zone_id"
+							<select name="payment_pointcheckout_card_geo_zone_id"
 								id="input-geo-zone" class="form-control">
 								<option value="0">{{ text_all_zones }}</option>
 								{% for geo_zone in geo_zones %}
-								{% if geo_zone.geo_zone_id == payment_pointcheckout_pay_geo_zone_id %}
+								{% if geo_zone.geo_zone_id == payment_pointcheckout_card_geo_zone_id %}
 								<option value="{{ geo_zone.geo_zone_id }}" selected="selected">{{ geo_zone.name }}</option>
 								{% else %}
 								<option value="{{ geo_zone.geo_zone_id }}">{{ geo_zone.name }}</option>
@@ -312,7 +312,7 @@
 $('input[name=\'country\']').autocomplete({
 	'source': function(request, response) {
 		$.ajax({
-			url: 'index.php?route=extension/payment/pointcheckout_pay/country_autocomplete&user_token={{ user_token }}&filter_name=' +  encodeURIComponent(request),
+			url: 'index.php?route=extension/payment/pointcheckout_card/country_autocomplete&user_token={{ user_token }}&filter_name=' +  encodeURIComponent(request),
 			dataType: 'json',
 			success: function(json) {
 				response($.map(json, function(item) {
@@ -329,7 +329,7 @@ $('input[name=\'country\']').autocomplete({
 
 		$('#payment-country' + item['value']).remove();
 
-		$('#payment-country').append('<div id="payment-country' + item['value'] + '"><i class="fa fa-minus-circle"></i> ' + item['label'] + '<input type="hidden" name="payment_pointcheckout_pay_country[]" value="' + item['value'] + '" /></div>');
+		$('#payment-country').append('<div id="payment-country' + item['value'] + '"><i class="fa fa-minus-circle"></i> ' + item['label'] + '<input type="hidden" name="payment_pointcheckout_card_country[]" value="' + item['value'] + '" /></div>');
 	}
 });
 
@@ -351,7 +351,7 @@ $('#input-applicable-countries').change(function(){
 $('input[name=\'user-group\']').autocomplete({
 	'source': function(request, response) {
 		$.ajax({
-			url: 'index.php?route=extension/payment/pointcheckout_pay/user_group_autocomplete&user_token={{ user_token }}&filter_name=' +  encodeURIComponent(request),
+			url: 'index.php?route=extension/payment/pointcheckout_card/user_group_autocomplete&user_token={{ user_token }}&filter_name=' +  encodeURIComponent(request),
 			dataType: 'json',
 			success: function(json) {
 				response($.map(json, function(item) {
@@ -368,7 +368,7 @@ $('input[name=\'user-group\']').autocomplete({
 
 		$('#payment-user-group' + item['value']).remove();
 
-		$('#payment-user-group').append('<div id="payment-user-group' + item['value'] + '"><i class="fa fa-minus-circle"></i> ' + item['label'] + '<input type="hidden" name="payment_pointcheckout_pay_user_group[]" value="' + item['value'] + '" /></div>');
+		$('#payment-user-group').append('<div id="payment-user-group' + item['value'] + '"><i class="fa fa-minus-circle"></i> ' + item['label'] + '<input type="hidden" name="payment_pointcheckout_card_user_group[]" value="' + item['value'] + '" /></div>');
 	}
 });
 

@@ -1,8 +1,8 @@
 <?php
-class ControllerExtensionPaymentPointCheckoutPay extends Controller {
+class ControllerExtensionPaymentPointCheckoutCard extends Controller {
 	private $error = array();
 
-	const PMT = '_pay';
+	const PMT = '_card';
 	const ENABLE_STG = false;
 	private $prefixPaymentMethodKey = 'payment_pointcheckout' . self::PMT;
 	private $extPath = 'extension/payment/pointcheckout' . self::PMT;
