@@ -278,7 +278,7 @@ class ControllerExtensionPaymentPointCheckoutCard extends Controller {
     private function getAdminUrl(){
         if ($this->config->get($this->prefixPaymentMethodKey . '_env') == '2'){
             $_ADMIN_URL='https://admin.staging.pointcheckout.com';
-        } elseif($this->config->get($this->prefixPaymentMethodKey . '_env') == '1'){
+        } elseif($this->config->get($this->prefixPaymentMethodKey . '_env') == '0'){
             $_ADMIN_URL='https://admin.pointcheckout.com';
         } else {
             $_ADMIN_URL='https://admin.test.pointcheckout.com';
@@ -289,7 +289,7 @@ class ControllerExtensionPaymentPointCheckoutCard extends Controller {
     private function getApiBaseUrl(){
         if ($this->config->get($this->prefixPaymentMethodKey . '_env') == '2'){
             $_BASE_URL='https://api.staging.pointcheckout.com/mer/' . self::API_VER;
-        } elseif ($this->config->get($this->prefixPaymentMethodKey . '_env') == '1'){
+        } elseif ($this->config->get($this->prefixPaymentMethodKey . '_env') == '0'){
             $_BASE_URL='https://api.pointcheckout.com/mer/' . self::API_VER;
         } else {
             $_BASE_URL='https://api.test.pointcheckout.com/mer/' . self::API_VER;
