@@ -3,7 +3,7 @@ OpenCart3 extension for PointCheckout
 
 # Installation steps :
 
-1. download the lastest release .ocmod.zip file from the [releases section](https://github.com/pointcheckout/opencart3-pointcheckout/releases)
+1. download the lastest release .ocmod.zip file from the [releases section](https://github.com/pointcheckout/opencart/releases)
 
 download the 
 
