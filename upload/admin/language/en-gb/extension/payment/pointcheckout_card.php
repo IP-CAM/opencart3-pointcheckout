@@ -5,7 +5,7 @@ $_['heading_title']             = 'PointCheckout Card Payment';
 // Text
 $_['text_extension']            = 'Extensions';
 $_['text_success']              = 'Success: You have modified PointCheckout account details!';
-$_['text_edit']                 = 'Edit PointCheckout Card payment';
+$_['text_edit']                 = 'Edit PointCheckout Card payment settings';
 $_['text_pointcheckout_card']    = '<a target="_BLANK" href="https://www.pointcheckout.com"><img src="view/image/payment/pointcheckout.png" alt="pointcheckout Website " title="PointCheckout Payment " style="border: 1px solid #EEEEEE;" /></a>';
 $_['text_all_countries']        = 'All allowed countries';
 $_['text_specific_countries']   = 'Specific Countries Only';
