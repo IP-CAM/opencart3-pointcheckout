@@ -1,5 +1,5 @@
-# opencart3-pointcheckout
-OpenCart3 extension for PointCheckout
+# opencart
+OpenCart extension for PointCheckout
 
 # Installation steps :
 
